@@ -13,12 +13,11 @@ code {
 }
 
 
-navbar {
+header {
   width: calc(100%-2px);
   padding: 0 0.25em;
-  background-color: grey;
-  color: aliceblue;
+  background-color: #008080;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
