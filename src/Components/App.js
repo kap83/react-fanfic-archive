@@ -1,18 +1,13 @@
-import '../index.css';
-import Header from './Header';
-import NavBar from './NavBar';
+import React from 'react'
+import Header from './Header'
+import NavBar from './NavBar'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <NavBar />
-      </div>
-    </> 
-  );
+    <div>
+      <Header />
+      <NavBar />
+    </div>
+  )
 }
 
-export default App;
