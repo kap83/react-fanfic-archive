@@ -6,9 +6,9 @@ export default function NavBar() {
   return (
     <>
      {/* username
-//         userimage */}
-//         <button style={{float: "right"}}>Profile</button>
-//         <button style={{float: "right"}}>Post</button>
+        userimage */}
+         <button style={{float: "right"}}>Profile</button>
+         <button style={{float: "right"}}>Post</button>
       <form>
         <label>
           Search: 
