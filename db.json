@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "cail_writer",
+            "profilePicture": " " ,
+            "fandom": ["Star Trek", "The Lord of the Rings"], 
+            "titles": ["Oasis", "Broken Sign", "Terminal", "our dreams would carry us"],
+            "favorite": "yes"
+        },
+        {
+            "id": 2,
+            "userName": "dragonwitch",
+            "profilePicture": "https://images.pexels.com/photos/15382551/pexels-photo-15382551.jpeg" ,
+            "fandom": ["Avengers", "The Lord of the Rings"], 
+            "titles": ["Lost Worlds", "take my name", "Thursday", "Everything", "Drift"],
+            "favorite": "no"
+        },
+        {
+            "id": 3,
+            "userName": "lucy",
+            "profilePicture": "https://images.pexels.com/photos/6194980/pexels-photo-6194980.jpeg" ,
+            "fandom": "Star Wars", 
+            "titles": ["Spy and Assassin", "One Shots and Drabbles"],
+            "favorite": "no"
+        }, 
+        {
+            "id": 4,
+            "userName": "alpha_altair",
+            "profilePicture": "https://images.pexels.com/photos/13194386/pexels-photo-13194386.png" ,
+            "fandom": "Star Trek", 
+            "titles": ["Duet", "Complications", "O'Brien's Very Bad No Good Day"],
+            "favorite": "no"
+        },
+        {
+            "id": 5,
+            "userName": "cosmictrain",
+            "profilePicture": "https://images.pexels.com/photos/2479844/pexels-photo-2479844.jpeg" ,
+            "fandom": ["Star Trek", "Star Wars"], 
+            "titles": ["the liminal", "What Happens in Risa, Stays on Risa", "pass the salt", "Captured"],
+            "favorite": "no"
+        }
+    ] 
+}
