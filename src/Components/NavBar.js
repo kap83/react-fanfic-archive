@@ -1,11 +1,18 @@
 //will include titles, authors. one of the users should be u. cause you want to be able to star another favorite author
 
-import React, {useState} from 'react'
+//https://www.youtube.com/watch?v=SLfhMt5OUPI
+
+
+// eslint-disable-next-line
+import React from 'react'
 import '../index.css'
 
-export default function NavBar() {
 
-
+// eslint-disable-next-line
+export default function NavBar({userData}) {
+  // console.log(userData)
+  
+ 
   return (
     <>
     <nav className='navBar'>
@@ -16,8 +23,9 @@ export default function NavBar() {
           <option>FANDOM</option>
         </select>
       </form>
+      {/* either the icon makes the username disappear, the conditional syntax is wrong for the first result, or it's the CSS --look it up */}
+      <span className='username'> {userData.map((user) => user.username === "dragonwitch" ? user.username  : null)}</span>
       <span className='btn'>
-        <a href='/username'>username</a>
         <button>Profile</button>
         <button>Post</button>
       </span>

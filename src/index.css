@@ -40,16 +40,15 @@ header {
 .navBar label {
   padding: 0px;
   text-align: center;
-  padding: .25rem;
-  gap: 1rem
+}
+/* reminder to center later  */
+.navBar username {
+  padding: 0;
+  margin-left: 56rem; 
 }
 
 .navBar .btn {
-  /* background-color: red; */
-  /* text-decoration: none; */
-  float: right;
-  margin-left: 135rem;
-  display: flex;
+  margin-left: 82rem;
   align-items: center;
-  padding: .25rem
+  padding: 0
 }
