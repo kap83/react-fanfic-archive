@@ -5,17 +5,15 @@ import '../index.css'
 
 export default function NavBar() {
 
-  const [user, setUser] = useState(users)
-  
-  console.log(user)
 
   return (
+    <>
     <nav className='navBar'>
       <form className='form'>
         <label>SEARCH:</label>
         <select>
-          <option><a href='/Author'>AUTHOR</a></option>
-          <option><a href='/Fandom'>FANDOM</a></option>
+          <option>AUTHOR</option>
+          <option>FANDOM</option>
         </select>
       </form>
       <span className='btn'>
@@ -24,7 +22,6 @@ export default function NavBar() {
         <button>Post</button>
       </span>
     </nav>
-
-  
+    </>
   )
 }
