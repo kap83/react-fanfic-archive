@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import Header from './Header'
 import NavBar from './NavBar'
+import Card from './Card'
 
 //when website loads user's profile pops up with their icon and fics listed. 
   //when app component renders, make a GET request to db.json
@@ -24,6 +25,7 @@ export default function App() {
     <div>
       <Header />
       {userData && <NavBar userData={userData} />}
+      {userData && <Card userData={userData} />}
 
     </div>
   )

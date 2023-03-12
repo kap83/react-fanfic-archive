@@ -11,7 +11,7 @@
         {
             "id": 2,
             "username": "dragonwitch",
-            "icon": "🙏",
+            "icon": "https://images.pexels.com/photos/15382551/pexels-photo-15382551.jpeg",
             "fandom": ["Avengers", "The Lord of the Rings"], 
             "titles": ["Lost Worlds", "take my name", "Thursday", "Everything", "Drift"],
             "favorite": "no"
