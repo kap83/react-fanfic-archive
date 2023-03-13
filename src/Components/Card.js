@@ -2,34 +2,27 @@ import React from 'react'
 import './Card.css'
 
 //card displays go here 
-
+//To do
+  //[] styling for hearts
+  //[] map out fandom and titles
+  //[] font for username
+  //[] styling icons 
 
 export default function Card({userData}) {
-    // console.log(userData)
-
-    userData.map((user) => {
-        return(
-            console.log(user.username)
-            // username={user.username},
-            // icon={user.icon},
-            // fandom = {user.fandom},
-            // titles = {user.titles}
-        )
-    })
-
   return (
-    <div className='card-container'>
-        <div className='image-container'>
-            {/* <img src={} alt = "icon"></img> */}
-            <h2>picture</h2>
-        </div>
-        <div className='card-author'>
-            <h3>Author Name</h3>
-        </div>
-        <div className='card-body'>
-            <p>Fandoms</p>
-            <p>Titles</p>
-        </div>
-    </div>
+    <> 
+    {userData.map((user)=> user.username !== "dragonwitch" ?
+        <div className = 'card-container' key={user.id}>
+        <div className='image-container'><img src={user.icon} alt="icon" /></div>
+        {user.favorite === "yes" ? "❤️" : "🤍" }
+        <h2>{user.username}</h2>
+        <span style={{wordSpacing: "1px"}}><p>FANDOM: {user.fandom}</p></span>
+        <span style={{wordSpacing: "1px"}}><p>TITLES: {user.titles}</p></span>
+      </div> : null
+    
+  )}
+    </>
   )
 }
+
+

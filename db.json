@@ -3,7 +3,7 @@
         {
             "id": 1,
             "username": "cali_writer",
-            "icon": " " ,
+            "icon": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg",
             "fandom": ["Star Trek", "The Lord of the Rings"], 
             "titles": ["Oasis", "Broken Sign", "Terminal", "our dreams would carry us"],
             "favorite": "yes"
@@ -38,6 +38,15 @@
             "icon": "https://images.pexels.com/photos/2479844/pexels-photo-2479844.jpeg" ,
             "fandom": ["Star Trek", "Star Wars"], 
             "titles": ["the liminal", "What Happens in Risa, Stays on Risa", "pass the salt", "Captured"],
+            "favorite": "no"
+        },
+
+        {
+            "id": 6,
+            "username": "localgal",
+            "icon": "https://images.pexels.com/photos/8989451/pexels-photo-8989451.jpeg" ,
+            "fandom": ["Avengers", "Star Wars"], 
+            "titles": ["Sorry that I got caught", "Fade Into You", "Canon is More Like Guidelines", "The Autopsy", "wait for the rain"],
             "favorite": "no"
         }
     ] 
