@@ -1,14 +1,16 @@
 import React from 'react'
-import './Card.css'
+// import './Card.css'
+import '../index.css'
 
-//card displays go here 
-//To do
-  //[] styling for hearts
-  //[] map out fandom and titles
-  //[] font for username
-  //[] styling icons 
+  //To do
+    //[] filter by fandom 
+    //[] styling for hearts
+    //[] map out fandom and titles
+    //[] font for username
+    //[] styling icons 
+  
 
-export default function Card({userData}) {
+export default function Author({userData}) {
   return (
     <> 
     {userData.map((user)=> user.username !== "dragonwitch" ?

@@ -1,9 +1,12 @@
 // eslint-disable-next-line
 import React, {useState, useEffect} from 'react'
+import {Route, Switch} from "react-router-dom"
 import Header from './Header'
 import NavBar from './NavBar'
-// eslint-disable-next-line
-import Card from './Card'
+import Home from './Home'
+import Fandom from './Fandom'
+import Author from './Author'
+
 
 //when website loads user's profile pops up with their icon and fics listed. 
   //when app component renders, make a GET request to db.json
@@ -23,11 +26,23 @@ export default function App() {
   }, [])
 
   return (
-    <div>
+    <>
       <Header />
       {userData && <NavBar userData={userData} />}
-      {userData && <Card userData={userData} />}
-    </div>
+      <Route>
+      <Switch>
+        <Route path="/fandom">
+          <Fandom />
+        </Route>
+        <Route path="/author">
+          {userData && <Author userData={userData} />}
+        </Route>
+        <Route exact path="/">
+          {userData && <Home userData={userData} />}
+        </Route>
+      </Switch>
+      </Route>
+    </>
   )
 }
 
