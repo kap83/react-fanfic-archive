@@ -1,33 +1,24 @@
-//will include titles, authors. one of the users should be u. cause you want to be able to star another favorite author
-
-//https://www.youtube.com/watch?v=SLfhMt5OUPI
-
 
 
 import React from 'react'
 import '../index.css'
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 
-// eslint-disable-next-line
-export default function NavBar({userData}) {
-  // console.log(userData)
+
+export default function NavBar() {
+  const linkStyles = {
+    color: "white",
+    textDecoration: "none"
+  }
+
 
   return (
-    <>
-    <nav className='navBar'>
-      <Link to="/">HOME</Link>
-      <Link to="/">AUTHORS</Link>
-      <Link to="/">FANDOMS</Link>
-      <Link to="/">FAVORITES</Link>
-   
-      {/* either the icon makes the username disappear, the conditional syntax is wrong for the first result, or it's the CSS --look it up */}
-      <span className='username'> {userData.map((user) => user.username === "dragonwitch" ? user.username  : null)}</span>
-      {/* <span className='btn'>
-        <button>Profile</button>
-        <button>Post</button>
-      </span> */}
-    </nav>
-    </>
+    <div className='navBar'>
+      <NavLink to="/" exact style={linkStyles} activeStyle={{background: "grey"}}>HOME</NavLink>
+      <NavLink to="/fandom" exact style={linkStyles} activeStyle={{background: "grey"}}>FANDOM</NavLink>
+      <NavLink to="/favorites" exact style={linkStyles} activeStyle={{background: "grey"}}>FAVORITES</NavLink>
+    </div>
+    
   )
 }

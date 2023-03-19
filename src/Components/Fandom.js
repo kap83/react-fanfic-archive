@@ -5,12 +5,15 @@ import React from 'react'
   //[]create text box
  
 
-export default function Fandom({userData}) {
-  return (
-    <div>
-        <h1>Fandom List</h1>
-        {userData.filter((user) => user.username === "cosmictrain" ? console.log(user.name) : null)}
+export default function Fandom() {
 
-    </div>
+  return (
+  <form style={{marginTop: "10px", marginLeft: "5px"}}>
+    <label style={{paddingLeft: "3px", paddingRight: "4px"}}>
+        Search:
+      <input type="text" name="name" />
+    </label>
+    <input type="submit" value="Submit" />
+</form>
   )
 }
