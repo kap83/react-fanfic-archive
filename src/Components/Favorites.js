@@ -2,8 +2,8 @@ import React from 'react'
 
 
 //To do
-    //[] filter by fandom 
     //[] create cards
+    //[]create text box
 
 export default function Favorites() {
   return (

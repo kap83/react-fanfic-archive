@@ -6,6 +6,7 @@ import NavBar from './NavBar'
 import Home from './Home'
 import Fandom from './Fandom'
 import Author from './Author'
+import Filter from './Filter'
 
 
 //when website loads user's profile pops up with their icon and fics listed. 
@@ -17,6 +18,8 @@ export default function App() {
   // eslint-disable-next-line
   const [userData, setUserData] = useState(null)
   // console.log(userData)
+  // eslint-disable-next-line
+  const [page, setPage] = useState("/")
 
 
   useEffect(() => {
@@ -26,23 +29,21 @@ export default function App() {
   }, [])
 
   return (
-    <>
+    <div>
       <Header />
-      {userData && <NavBar userData={userData} />}
-      <Route>
-      <Switch>
-        <Route path="/fandom">
-          <Fandom />
-        </Route>
-        <Route path="/author">
-          {userData && <Author userData={userData} />}
-        </Route>
-        <Route exact path="/">
-          {userData && <Home userData={userData} />}
-        </Route>
-      </Switch>
-      </Route>
-    </>
+      {userData && <NavBar userData={userData} onChangePage={setPage}/>}
+        <Switch>
+          <Route path="/author">
+            {userData && <Author userData={userData} />}
+          </Route>
+          <Route path="/fandom">
+            <Fandom />
+          </Route>
+          <Route exact path="/">
+            {userData && <Home userData={userData} />}
+          </Route>
+        </Switch>
+    </div>
   )
 }
 

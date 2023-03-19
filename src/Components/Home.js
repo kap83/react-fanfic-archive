@@ -10,8 +10,8 @@ export default function Home({userData}) {
     <div style={{marginTop:"3%", marginLeft:"20%" }}>
       <h1 style={{display: "flex", marginLeft: "30%"}}>dragonwitch</h1> 
       {userData.map((user) => user.username === "dragonwitch" ? 
-      <>
-      <div className = 'card-container'>
+      <div key={user.id}>
+      <div className='card-container'>
         <p>Number of Works: {user.titles.length}</p> 
         <p>Number of Fandoms: {user.fandom.length}</p>
         <p>Drafts:</p>
@@ -19,7 +19,7 @@ export default function Home({userData}) {
       <div className = 'card-container'>
         <span style={{wordSpacing: "1px"}}><p>FANDOM: {user.fandom}</p></span>
         <span style={{wordSpacing: "1px"}}><p>TITLES: {user.titles}</p></span>
-      </div> </>
+      </div> </div>
       : null )}
     </div>
   )

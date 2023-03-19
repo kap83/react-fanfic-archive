@@ -16,10 +16,10 @@ export default function NavBar({userData}) {
   return (
     <>
     <nav className='navBar'>
-      <Link exact to="/">HOME</Link>
-      <Link exact to="/">AUTHORS</Link>
-      <Link exact to="/">FANDOMS</Link>
-      <Link exact to="/">FAVORITES</Link>
+      <Link to="/">HOME</Link>
+      <Link to="/">AUTHORS</Link>
+      <Link to="/">FANDOMS</Link>
+      <Link to="/">FAVORITES</Link>
    
       {/* either the icon makes the username disappear, the conditional syntax is wrong for the first result, or it's the CSS --look it up */}
       <span className='username'> {userData.map((user) => user.username === "dragonwitch" ? user.username  : null)}</span>

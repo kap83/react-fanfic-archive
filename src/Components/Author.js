@@ -3,7 +3,7 @@ import React from 'react'
 import '../index.css'
 
   //To do
-    //[] filter by fandom 
+    //[]create text box
     //[] styling for hearts
     //[] map out fandom and titles
     //[] font for username
