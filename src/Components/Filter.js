@@ -1,4 +1,3 @@
-import { wait } from '@testing-library/user-event/dist/utils'
 import React from 'react'
 
 //Todo:
@@ -12,12 +11,13 @@ export default function Filter() {
 
   return (
     <div>
-        <input 
-          type="text"
-          placeholder={wait}
-          // onChange={handleChange}
-          // value={searchInput}
-        />
+      <form style={{marginTop: "10px", marginLeft: "5px"}}>
+    <label style={{paddingLeft: "3px", paddingRight: "4px"}}>
+        Search:
+      <input type="text" name="name" />
+    </label>
+    <input type="submit" value="Submit" />
+</form>
     </div>
   )
 }
