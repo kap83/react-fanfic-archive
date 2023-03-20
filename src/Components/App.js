@@ -33,7 +33,7 @@ export default function App() {
         {userData && <Favorites userData={userData}/>}
       </Route>
       <Route exact path="/">
-       <Home />
+       {userData && <Home userData={userData}/>}
       </Route>
     </Switch>
   

@@ -4,7 +4,7 @@
             "id": 1,
             "username": "cali_writer",
             "icon": "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg",
-            "fandom": ["Star Trek", "The Lord of the Rings"], 
+            "fandoms": ["Star Trek", "The Lord of the Rings"], 
             "titles": ["Oasis", "Broken Sign", "Terminal", "our dreams would carry us"],
             "favorite": "yes"
         },
@@ -12,7 +12,7 @@
             "id": 2,
             "username": "dragonwitch",
             "icon": "https://images.pexels.com/photos/15382551/pexels-photo-15382551.jpeg",
-            "fandom": ["Avengers", "The Lord of the Rings"], 
+            "fandoms": ["Avengers", "The Lord of the Rings"], 
             "titles": ["Lost Worlds", "take my name", "Thursday", "Everything", "Drift"],
             "favorite": "no"
         },
@@ -20,7 +20,7 @@
             "id": 3,
             "username": "lucy",
             "icon": "https://images.pexels.com/photos/6194980/pexels-photo-6194980.jpeg" ,
-            "fandom": "Star Wars", 
+            "fandoms": ["Star Wars"],
             "titles": ["Spy and Assassin", "One Shots and Drabbles"],
             "favorite": "yes"
         }, 
@@ -28,7 +28,7 @@
             "id": 4,
             "username": "alpha_altair",
             "icon": "https://images.pexels.com/photos/13194386/pexels-photo-13194386.png" ,
-            "fandom": "Star Trek", 
+            "fandoms": ["Star Trek"],
             "titles": ["Duet", "Complications", "O'Brien's Very Bad No Good Day"],
             "favorite": "no"
         },
@@ -36,7 +36,7 @@
             "id": 5,
             "username": "cosmictrain",
             "icon": "https://images.pexels.com/photos/2479844/pexels-photo-2479844.jpeg" ,
-            "fandom": ["Star Trek", "Star Wars"], 
+            "fandoms": ["Star Trek", "Star Wars"], 
             "titles": ["the liminal", "What Happens in Risa, Stays on Risa", "pass the salt", "Captured"],
             "favorite": "no"
         },
@@ -45,7 +45,7 @@
             "id": 6,
             "username": "localgal",
             "icon": "https://images.pexels.com/photos/8989451/pexels-photo-8989451.jpeg" ,
-            "fandom": ["Avengers", "Star Wars"], 
+            "fandoms": ["Avengers", "Star Wars"], 
             "titles": ["Sorry that I got caught", "Fade Into You", "Canon is More Like Guidelines", "The Autopsy", "wait for the rain"],
             "favorite": "no"
         }
