@@ -5,7 +5,7 @@ import NavBar from './NavBar'
 import Home from './Home'
 import Fandoms from './Fandoms'
 import Favorites from "./Favorites"
-import Filter from './Filter'
+
 
 //ToDo:
   //[] onClick of a heart, the user is either added to favorites or removed from favorites
@@ -14,9 +14,11 @@ import Filter from './Filter'
       //[] bonus: "no fandom found, start a fic!" or something if the a fandom no one has written for is typed
 
 
+      // POST REQUEST
+
 export default function App() {
   const [userData, setUserData] = useState(null)
-  const [click, setClick] = useState(userData)
+  // const [click, setClick] = useState(userData)
 
   
 
@@ -32,24 +34,17 @@ export default function App() {
   // eslint-disable-next-line
   const no = <span roll="img" aria-label='White Heart'>♡</span>
 
-  const handleClick = () => {
-      setClick(!click)
-    
-  }
-
-
 
   return (
     <div>
       <Header />
       <NavBar/>
-      <Filter />
       <Switch>
         <Route path="/fandoms">
-          <Fandoms />
+          {userData && <Fandoms userData={userData} setUserData={setUserData} />}
         </Route>
         <Route path="/favorites">
-          {userData && <Favorites userData={userData} handleClick={handleClick}/>}
+          {userData && <Favorites userData={userData} setUserData={setUserData} />}
         </Route>
         <Route exact path="/">
           {userData && <Home userData={userData}/>}
