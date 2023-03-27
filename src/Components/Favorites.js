@@ -79,9 +79,6 @@ const handleChange = (id) => {
 
 }
 
-
-  
-
   return (
     <>
         <h1 style={h1Style}>FAVORITE AUTHORS</h1>

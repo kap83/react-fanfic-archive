@@ -2,19 +2,18 @@ import React, {useState} from 'react'
 
 
 export default function Fandoms({userData}) {
-   const [fandoms, setFandoms] = useState("")
+   const [search, setSearch] = useState("")
+   const [localUserData, setLocalUserData] = useState(userData)
    
 
   const handleChange = (e) => {  
-    setFandoms(e.target.value)
+    setSearch(e.target.value)
   } 
 
  const handleSubmit = (e) =>{
     e.preventDefault()
-    fetch(`http://localhost:3000/users/${fandoms}`)
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
+    const newSearchData = userData.filter((user) =>  user.fandoms.includes(search.toLowerCase()))
+   setLocalUserData(newSearchData)
  }
   return (
   <>
@@ -22,13 +21,13 @@ export default function Fandoms({userData}) {
         <form onSubmit={handleSubmit} style={{marginTop: '10px', marginLeft: '5px'}}>
           <label style={{paddingLeft: '3px', paddingRight: '4px'}}>
             Search:
-            <input type="text" value={fandoms} onChange={handleChange} name="name" />
+            <input type="text" value={search} onChange={handleChange} name="name" />
           </label>
           <button type="submit">Submit</button>
         </form>
       </div>
       <div>
-        {userData.map((user) => {
+        {localUserData.map((user) => {
           return(
             <div key={user.id} className= 'card-container'>
               <button>♥️</button>
