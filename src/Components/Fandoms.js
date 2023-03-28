@@ -5,9 +5,10 @@ export default function Fandoms({userData}) {
    const [search, setSearch] = useState("")
    const [localUserData, setLocalUserData] = useState(userData)
    
+   console.log(search)
 
-  const handleChange = (e) => {  
-    setSearch(e.target.value)
+  const handleChange = (e) => { 
+    setSearch(e.target.value.toLowerCase())
   } 
 
  const handleSubmit = (e) =>{
