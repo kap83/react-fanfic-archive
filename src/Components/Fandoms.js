@@ -1,53 +1,36 @@
 import React, {useState} from 'react'
+import Card from './Card'
 
 
-export default function Fandoms({userData}) {
+export default function Fandoms({userData, handleCommenter, handleNewComment, handleCommentSubmit, comment, commenter}) {
    const [search, setSearch] = useState("")
    const [localUserData, setLocalUserData] = useState(userData)
    
-   console.log(search)
 
   const handleChange = (e) => { 
-    setSearch(e.target.value.toLowerCase())
+    setSearch(e.target.value)
   } 
 
  const handleSubmit = (e) =>{
     e.preventDefault()
-    const newSearchData = userData.filter((user) =>  user.fandoms.includes(search.toLowerCase()))
+    const newSearchData = userData.filter((user) => user.fandoms.includes(search))
    setLocalUserData(newSearchData)
  }
+
   return (
   <>
-      <div>
         <form onSubmit={handleSubmit} style={{marginTop: '10px', marginLeft: '5px'}}>
           <label style={{paddingLeft: '3px', paddingRight: '4px'}}>
-            Search:
+            Enter Fandom:
             <input type="text" value={search} onChange={handleChange} name="name" />
           </label>
-          <button type="submit">Submit</button>
+          <button type="submit">Search</button>
         </form>
-      </div>
-      <div>
-        {localUserData.map((user) => {
-          return(
-            <div key={user.id} className= 'card-container'>
-              <button>♥️</button>
-              <div className='image-container'><img src={user.icon} alt="icon" /></div>
-              <h2>{user.username}</h2>
-              <h3>Fandoms:</h3>
-              {user.fandoms.map((fandom) =><ul key={crypto.randomUUID()}><li style={{listStyleType: "none"}}>{fandom}</li></ul>)}
-              <h3>Titles:</h3> {user.titles.map((title) => <ul key={crypto.randomUUID()}><li style={{listStyleType:"none"}}>{title}</li></ul>)}
-              <form>
-                <label style={{paddingLeft: '3px', paddingRight: '4px'}}>
-                  Leave a Comment: 
-                  <input type="text" name="name" style={{width:" 300px", height: "200px"}}/>
-                </label>
-                <button type="submit">Submit</button>
-              </form>
-            </div>
-          )
-        })}
-    </div>
+        {localUserData.map((user) => <Card key={user.id} user={user} handleCommenter={handleCommenter}
+            handleNewComment ={handleNewComment}
+            handleSubmit={handleSubmit}
+            commenter={commenter}
+            comment={comment} />)}
   </>
   )
 }

@@ -7,20 +7,11 @@ import Fandoms from './Fandoms'
 import Favorites from "./Favorites"
 
 
-//ToDo:
-  //[] onClick of a heart, the user is either added to favorites or removed from favorites
-    // heart should go from full to empty depending on the state 
-  //[] type in a fandom in search should produce every writer who has written for that fandom
-      //[] bonus: "no fandom found, start a fic!" or something if the a fandom no one has written for is typed
-
-
-      // POST REQUEST
-
 export default function App() {
   const [userData, setUserData] = useState(null)
-  // const [click, setClick] = useState(userData)
+  const [commenter, setCommenter] = useState("")
+  const [comment, setComment] = useState()
 
-  
 
   useEffect(()=>{
     fetch("http://localhost:3000/users")
@@ -29,10 +20,31 @@ export default function App() {
     )
   },[])
 
-  // eslint-disable-next-line
-  const yes = <span roll="img" aria-label='Red Heart'>♥️</span>
-  // eslint-disable-next-line
-  const no = <span roll="img" aria-label='White Heart'>♡</span>
+const handleCommenter = (e) => {
+  setCommenter(e.target.value)
+}
+
+const handleNewComment = (e) => {
+  setComment(e.target.value)
+}
+
+ // eslint-disable-next-line
+const handleSubmit =(e) => {
+  e.preventDefault()
+  const commentData = {commenter, comment}
+  fetch('http://localhost:3000/users', {
+    method: 'POST',
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(commentData)
+  })
+  .then(res=> res.json())
+  .then(newComment => handleUpdateUserData(newComment))
+}
+
+function handleUpdateUserData(newComment){
+  setUserData([...userData], newComment)
+}
+
 
 
   return (
@@ -41,7 +53,15 @@ export default function App() {
       <NavBar/>
       <Switch>
         <Route path="/fandoms">
-          {userData && <Fandoms userData={userData} setUserData={setUserData} />}
+          {userData && <Fandoms 
+            userData={userData} 
+            setUserData={setUserData} 
+            handleCommenter={handleCommenter}
+            handleNewComment ={handleNewComment}
+            handleSubmit={handleSubmit}
+            commenter={commenter}
+            comment={comment}
+            />}
         </Route>
         <Route path="/favorites">
           {userData && <Favorites userData={userData} setUserData={setUserData} />}
@@ -50,7 +70,6 @@ export default function App() {
           {userData && <Home userData={userData}/>}
         </Route>
       </Switch>
-  
     </div>
   )
 }

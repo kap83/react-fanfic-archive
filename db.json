@@ -14,7 +14,14 @@
         "Terminal",
         "our dreams would carry us"
       ],
-      "favorite": "yes"
+      "favorite": "yes",
+      "comments": [
+        {
+          "id": 1,
+          "commenter": "dimples",
+          "comment": "Terminal had me in tears it was so good!!!!"
+        }
+      ]
     },
     {
       "id": 2,
@@ -31,7 +38,14 @@
         "Everything",
         "Drift"
       ],
-      "favorite": "no"
+      "favorite": "no",
+      "comments": [
+        {
+          "id": 1,
+          "commenter": "sleepy_dwarf",
+          "comment": "Please tell me there'll be a sequel to Drift!"
+        }
+      ]
     },
     {
       "id": 3,
@@ -44,7 +58,14 @@
         "Spy and Assassin",
         "One Shots and Drabbles"
       ],
-      "favorite": "yes"
+      "favorite": "yes",
+      "comments": [
+        {
+          "id": 1,
+          "commenter": "kat",
+          "comment": "I love your Star Wars fics"
+        }
+      ]
     },
     {
       "id": 4,
@@ -58,7 +79,14 @@
         "Complications",
         "O'Brien's Very Bad No Good Day"
       ],
-      "favorite": "no"
+      "favorite": "no",
+      "comments": [
+        {
+          "id": 1,
+          "commenter": "chocobotacos",
+          "comment": "Poor O'Brien!! XD"
+        }
+      ]
     },
     {
       "id": 5,
@@ -74,7 +102,14 @@
         "pass the salt",
         "Captured"
       ],
-      "favorite": "no"
+      "favorite": "no",
+      "comments": [
+        {
+          "id": 1,
+          "commenter": "odos_gal",
+          "comment": "I love everything you write. Thanks for sharing!"
+        }
+      ]
     },
     {
       "id": 6,
@@ -91,7 +126,14 @@
         "The Autopsy",
         "wait for the rain"
       ],
-      "favorite": "no"
+      "favorite": "no",
+      "comments": [
+        {
+          "id": 1,
+          "commenter": "Natasha_is_BAE",
+          "comment": "The Autopsy had me on the edge of my seat! Fantastic Work!"
+        }
+      ]
     }
   ]
 }
