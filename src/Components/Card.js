@@ -1,5 +1,4 @@
 import React from 'react'
-import Comments from './Comments'
 
 const cardStyle = {
     marginTop:"3%",
@@ -49,8 +48,8 @@ const cardStyle = {
     borderStyle: "solid", 
     color: "pink"
   }
-  
 
+  const defaultIcon = "https://picsum.photos/id/0/100/100"
 
  export default function Card({user}) {
   
@@ -58,7 +57,7 @@ const cardStyle = {
       <div className= 'card-container'>
             <button style={btnStyle}>♥️</button>
               <div className='image-container' style={cardStyle}>
-                <img src={user.icon} alt="icon" />
+                <img src={user.icon || defaultIcon} alt="icon" />
               </div>
                 <h2 style={usernameStyle}>{user.username}</h2>
                 <h3 style={fandomLableStyle}>Fandoms:</h3>
@@ -71,7 +70,7 @@ const cardStyle = {
                   <li>{title}</li>
                 </ul>
               )}
-              <Comments />
+
             </div>
   )
 }

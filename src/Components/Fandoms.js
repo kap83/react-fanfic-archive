@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Card from './Card'
 
 
-export default function Fandoms({userData, handleCommenter, handleNewComment, handleCommentSubmit, comment, commenter}) {
+export default function Fandoms({userData}) {
    const [search, setSearch] = useState("")
    const [localUserData, setLocalUserData] = useState(userData)
    
@@ -26,11 +26,7 @@ export default function Fandoms({userData, handleCommenter, handleNewComment, ha
           </label>
           <button type="submit">Search</button>
         </form>
-        {localUserData.map((user) => <Card key={user.id} user={user} handleCommenter={handleCommenter}
-            handleNewComment ={handleNewComment}
-            handleSubmit={handleSubmit}
-            commenter={commenter}
-            comment={comment} />)}
+        {localUserData.map((user) => <Card key={user.id} user={user} />)}
   </>
   )
 }
