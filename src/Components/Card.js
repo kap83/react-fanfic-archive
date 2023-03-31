@@ -62,7 +62,7 @@ const cardStyle = {
                 <h2 style={usernameStyle}>{user.username}</h2>
                 <h3 style={fandomLableStyle}>Fandoms:</h3>
               {user.fandoms?.map((fandom) => 
-                <ul key={crypto.randomUUID()} style={fandomListStyle}>
+                <ul key={crypto.randomUUID()} >
                   <li style={{listStyleType: "none"}}>{fandom}</li>
                 </ul>)}
               {user.titles?.map((title)=>

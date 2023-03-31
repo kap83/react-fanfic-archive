@@ -5,15 +5,17 @@ import Card from './Card'
 export default function Fandoms({userData}) {
    const [search, setSearch] = useState("")
    const [localUserData, setLocalUserData] = useState(userData)
-   
+   console.log(search)
 
   const handleChange = (e) => { 
     setSearch(e.target.value)
   } 
 
  const handleSubmit = (e) =>{
+    let changeSearchCaseSensitivity = search.toLowerCase()
     e.preventDefault()
-    const newSearchData = userData.filter((user) => user.fandoms.includes(search))
+    const newSearchData = userData.filter((user) => user.fandoms.toString().toLowerCase().includes(changeSearchCaseSensitivity)
+    )
    setLocalUserData(newSearchData)
  }
 
@@ -30,3 +32,6 @@ export default function Fandoms({userData}) {
   </>
   )
 }
+
+
+// user.fandoms.includes(search)
