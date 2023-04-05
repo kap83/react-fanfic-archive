@@ -9,7 +9,8 @@ import Favorites from "./Favorites"
 
 export default function App() {
   const [userData, setUserData] = useState(null)
-  
+
+
   useEffect(()=>{
     fetch("http://localhost:3000/users")
     .then(res => res.json())
@@ -17,6 +18,13 @@ export default function App() {
     )
   },[])
 
+  const handleNewUser = (newUser) => {
+      setUserData([...userData], newUser)
+  }
+
+  const handleFavoriteUpdate = (favoriteUpdate) => {
+      setUserData([...userData], favoriteUpdate)
+  }
 
   return (
     <div>
@@ -24,14 +32,13 @@ export default function App() {
       <NavBar/>
       <Switch>
         <Route path="/fandoms">
-          {userData && <Fandoms 
-            userData={userData} setUserData={setUserData} />}
+          {userData && <Fandoms userData={userData} />}
         </Route>
         <Route path="/favorites">
-          {userData && <Favorites userData={userData} setUserData={setUserData} />}
+          {userData && <Favorites handleFavoriteUpdate={handleFavoriteUpdate} userData={userData} />}
         </Route>
         <Route exact path="/">
-          {userData && <Home userData={userData} setUserData={setUserData}/>}
+          {userData && <Home userData={userData} handleNewUser={handleNewUser}/>}
         </Route>
       </Switch>
     </div>

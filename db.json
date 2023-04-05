@@ -14,7 +14,7 @@
         "Terminal",
         "our dreams would carry us"
       ],
-      "favorite": "yes",
+      "favorite": true,
       "comments": [
         {
           "id": 1,
@@ -38,7 +38,7 @@
         "Everything",
         "Drift"
       ],
-      "favorite": "no",
+      "favorite": false,
       "comments": [
         {
           "id": 1,
@@ -58,7 +58,7 @@
         "Spy and Assassin",
         "One Shots and Drabbles"
       ],
-      "favorite": "yes",
+      "favorite": true,
       "comments": [
         {
           "id": 1,
@@ -79,7 +79,7 @@
         "Complications",
         "O'Brien's Very Bad No Good Day"
       ],
-      "favorite": "no",
+      "favorite": false,
       "comments": [
         {
           "id": 1,
@@ -102,7 +102,7 @@
         "pass the salt",
         "Captured"
       ],
-      "favorite": "no",
+      "favorite": false,
       "comments": [
         {
           "id": 1,
@@ -126,7 +126,7 @@
         "The Autopsy",
         "wait for the rain"
       ],
-      "favorite": "no",
+      "favorite": false,
       "comments": [
         {
           "id": 1,

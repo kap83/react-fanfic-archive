@@ -1,76 +1,45 @@
-import React from 'react'
+import React, {useState} from 'react'
+import './Card.css'
 
-const cardStyle = {
-    marginTop:"3%",
-    marginLeft: "25%", 
-    marginRight: "-20%"
+
+export default function Card({user, handleFavoriteUpdate}) {
+  const [click, setClick] = useState(user.favorite)
+
+  const handleClick = () => {
+    setClick((prev) => !prev)
+
+
+    fetch(`http://localhost:3000/users/${user.id}`, {
+      method: "PATCH",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({favorite: !click})
+    })
+    .then(res => res.json())
+    .then(data => handleFavoriteUpdate(data))
   }
-  
-  const usernameStyle = {
-    float: "left", 
-    marginLeft: "2%"
-  }
-  
-  const fandomLableStyle ={
-    display: "flex", 
-    justifyContent: "center", 
-    marginTop: "20%", 
-    marginBottom: "1%", 
-    padding: "0px"
-  }
-  
-  const btnStyle = {
-    float: "left", 
-    marginTop:"5%", 
-    marginLeft: "1%"
-  }
-  
-  const fandomListStyle = {
-    display: "inline-block", 
-    marginTop: "0" , 
-    justifyContent: "center", 
-    marginBottom:"1%", 
-    padding: "0px 3px", 
-    listStyleType: "none"
-  }
-  
-  const titleLabelStyle = {
-    borderStyle: "solid", 
-    color: "green", 
-    marginTop: "0"
-  }
-  
-  const titleListStyle = {
-    listStyleType: "none", 
-    marginTop: "0px", 
-    display: "flex", 
-    justifyContent: "center", 
-    borderStyle: "solid", 
-    color: "pink"
-  }
+
+
 
   const defaultIcon = "https://picsum.photos/id/0/100/100"
-
- export default function Card({user}) {
   
   return (
-      <div className= 'card-container'>
-            <button style={btnStyle}>♥️</button>
-              <div className='image-container' style={cardStyle}>
+      <div className= 'author-card-container'>
+              <div className='image-container' >
                 <img src={user.icon || defaultIcon} alt="icon" />
               </div>
-                <h2 style={usernameStyle}>{user.username}</h2>
-                <h3 style={fandomLableStyle}>Fandoms:</h3>
+                <h1 className='usernameStyle'>{user.username}</h1>
+                <button className= 'btnStyle' onClick={handleClick}>{click ? "❤️" : "♡" }</button>
+                <h3 className='fandomLableStyle'>Fandoms:</h3>
               {user.fandoms?.map((fandom) => 
-                <ul key={crypto.randomUUID()} >
-                  <li style={{listStyleType: "none"}}>{fandom}</li>
+                <ul key={crypto.randomUUID()} className='fandomListStyle'>
+                  <li>{fandom}</li>
                 </ul>)}
+                <h3 className='titleLabelStyle'>Titles:</h3>
               {user.titles?.map((title)=>
-                <ul key={crypto.randomUUID()} style={titleListStyle}>
+                <ul key={crypto.randomUUID()} className='titleListStyle'>
                   <li>{title}</li>
                 </ul>
               )}
-
             </div>
   )
 }
