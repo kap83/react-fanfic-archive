@@ -25,7 +25,6 @@ export default function NewAuthorSubmit({handleNewUser}) {
   
     }
 
-
   return (
     <div>
         <form onSubmit={handleSubmit}>
@@ -53,9 +52,10 @@ export default function NewAuthorSubmit({handleNewUser}) {
           className='inputStyle' 
           onChange={(e)=> setTitle(e.target.value)} 
           />
-        {/* <button type="submit">Submit</button> */}
+        <br />
+        <br />
+        <button style={{marginLeft: "12%"}}type="submit">Submit</button>
       </form>
-      
     </div>
   )
 }

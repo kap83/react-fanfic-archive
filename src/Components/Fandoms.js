@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Card from './Card'
+import '../index.css'
 
 
 export default function Fandoms({userData}) {
@@ -21,10 +22,13 @@ export default function Fandoms({userData}) {
 
   return (
   <>
-        <form onSubmit={handleSubmit} style={{marginTop: '10px', marginLeft: '5px'}}>
-          <label style={{paddingLeft: '3px', paddingRight: '4px'}}>
+        <form onSubmit={handleSubmit} className='searchformStyle'>
+          <label className='searchLabelStyle'>
             Enter Fandom:
-            <input type="text" value={search} onChange={handleChange} name="name" />
+            <input type="text" 
+              className='searchInputStyle' 
+              value={search} onChange={handleChange} 
+              name="name" />
           </label>
           <button type="submit">Search</button>
         </form>

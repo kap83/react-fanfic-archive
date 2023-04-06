@@ -37,9 +37,17 @@ header {
   padding: 0 1rem
 } 
 
-nav a {
-  color: white;
-  text-decoration: none;
+.searchformStyle {
+  margin-top: 10px;
+  margin-left: 9px;
+}
+
+ .searchLabelStyle {
+  padding-right: 4px
+} 
+
+.searchInputStyle {
+  margin-left: 3px
 }
 
 .card-container {

@@ -17,5 +17,7 @@ All data is stored on a JSON server.
 ## Credit
 
 Icons images were acquired https://picsum.photos/
+
 Header images https://images.pexels.com/photos/851213/pexels-photo-851213.jpeg 
+
 Header graphic was made by me. 

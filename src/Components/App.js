@@ -32,13 +32,24 @@ export default function App() {
       <NavBar/>
       <Switch>
         <Route path="/fandoms">
-          {userData && <Fandoms userData={userData} />}
+          {userData && 
+            <Fandoms 
+            userData={userData} 
+            />}
         </Route>
         <Route path="/favorites">
-          {userData && <Favorites handleFavoriteUpdate={handleFavoriteUpdate} userData={userData} />}
+          {userData && 
+            <Favorites 
+              handleFavoriteUpdate={handleFavoriteUpdate} 
+              userData={userData} 
+            />}
         </Route>
         <Route exact path="/">
-          {userData && <Home userData={userData} handleNewUser={handleNewUser}/>}
+          {userData && 
+            <Home 
+            userData={userData} 
+            handleNewUser={handleNewUser} 
+          />}
         </Route>
       </Switch>
     </div>
