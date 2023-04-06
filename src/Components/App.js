@@ -9,7 +9,7 @@ import Favorites from "./Favorites"
 
 export default function App() {
   const [userData, setUserData] = useState(null)
-
+  console.log(userData)
 
   useEffect(()=>{
     fetch("http://localhost:3000/users")
@@ -23,7 +23,11 @@ export default function App() {
   }
 
   const handleFavoriteUpdate = (favoriteUpdate) => {
-      setUserData([...userData], favoriteUpdate)
+    console.log(favoriteUpdate.id)
+       const favoriteUserIndex = userData.findIndex((user) => user.id === favoriteUpdate.id)
+       const copyUserData = [...userData]
+       copyUserData[favoriteUserIndex] = favoriteUpdate
+      setUserData(copyUserData)
   }
 
   return (
@@ -35,6 +39,7 @@ export default function App() {
           {userData && 
             <Fandoms 
             userData={userData} 
+            handleFavoriteUpdate={handleFavoriteUpdate}
             />}
         </Route>
         <Route path="/favorites">

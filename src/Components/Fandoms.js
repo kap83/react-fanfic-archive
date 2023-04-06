@@ -1,17 +1,23 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from './Card'
 import '../index.css'
 
 
-export default function Fandoms({userData}) {
+export default function Fandoms({userData, handleFavoriteUpdate}) {
    const [search, setSearch] = useState("")
    const [localUserData, setLocalUserData] = useState(userData)
 
+   console.log(localUserData)
 
   const handleChange = (e) => { 
     setSearch(e.target.value)
   } 
 
+ useEffect(() => { 
+    setLocalUserData(userData)
+ }, [userData]) 
+ 
+ 
  const handleSubmit = (e) =>{
     let changeSearchCaseSensitivity = search.toLowerCase()
     e.preventDefault()
@@ -32,7 +38,7 @@ export default function Fandoms({userData}) {
           </label>
           <button type="submit">Search</button>
         </form>
-        {localUserData.map((user) => <Card key={user.id} user={user} />)}
+        {localUserData.map((user) => <Card key={user.id} handleFavoriteUpdate={handleFavoriteUpdate} user={user} />)}
   </>
   )
 }

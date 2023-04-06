@@ -5,7 +5,7 @@ import Card from './Card'
 
 
 export default function Favorites({userData, handleFavoriteUpdate}) {
-
+  console.log(userData)
   return (
     <>
       {userData.map((user) => user.favorite === true ? 

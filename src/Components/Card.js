@@ -1,18 +1,19 @@
+// eslint-disable-next-line
 import React, {useState} from 'react'
 import './Card.css'
 
 
 export default function Card({user, handleFavoriteUpdate}) {
-  const [click, setClick] = useState(user.favorite)
+  // const [click, setClick] = useState(user.favorite)
 
   const handleClick = () => {
-    setClick((prev) => !prev)
+    // setClick((prev) => !prev)
 
 
     fetch(`http://localhost:3000/users/${user.id}`, {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({favorite: !click})
+      body: JSON.stringify({favorite: !user.favorite})
     })
     .then(res => res.json())
     .then(data => handleFavoriteUpdate(data))
@@ -27,7 +28,7 @@ export default function Card({user, handleFavoriteUpdate}) {
                 <img src={user.icon || defaultIcon} alt="icon" />
               </div>
                 <h1 className='usernameStyle'>{user.username}</h1>
-                <button className= 'btnStyle' onClick={handleClick}>{click ? "❤️" : "♡" }</button>
+                <button className= 'btnStyle' onClick={handleClick}>{user.favorite ? "❤️" : "♡" }</button>
                 <h3 className='fandomLableStyle'>Fandoms:</h3>
               {user.fandoms?.map((fandom) => 
                 <ul key={crypto.randomUUID()} className='fandomListStyle'>
