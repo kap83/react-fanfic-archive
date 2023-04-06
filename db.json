@@ -14,7 +14,7 @@
         "Terminal",
         "our dreams would carry us"
       ],
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
         "Everything",
         "Drift"
       ],
-      "favorite": false
+      "favorite": true
     },
     {
       "id": 3,
@@ -44,7 +44,7 @@
         "Spy and Assassin",
         "One Shots and Drabbles"
       ],
-      "favorite": false
+      "favorite": true
     },
     {
       "id": 4,
@@ -58,7 +58,7 @@
         "Complications",
         "O'Brien's Very Bad No Good Day"
       ],
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 5,
@@ -92,6 +92,16 @@
         "wait for the rain"
       ],
       "favorite": false
+    },
+    {
+      "username": "Anon",
+      "fandoms": [
+        "Avengers"
+      ],
+      "titles": [
+        "Fic Title"
+      ],
+      "id": 7
     }
   ]
 }
