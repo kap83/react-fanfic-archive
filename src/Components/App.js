@@ -9,7 +9,6 @@ import Favorites from "./Favorites"
 
 export default function App() {
   const [userData, setUserData] = useState(null)
-  console.log(userData)
 
   useEffect(()=>{
     fetch("http://localhost:3000/users")
@@ -23,7 +22,6 @@ export default function App() {
   }
 
   const handleFavoriteUpdate = (favoriteUpdate) => {
-    console.log(favoriteUpdate.id)
        const favoriteUserIndex = userData.findIndex((user) => user.id === favoriteUpdate.id)
        const copyUserData = [...userData]
        copyUserData[favoriteUserIndex] = favoriteUpdate

@@ -1,5 +1,3 @@
-// arhive logo, user picture, post and see fic list buttons
-
 import React from 'react'
 import logo from '../images/logo.png'
 import '../index.css'

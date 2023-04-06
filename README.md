@@ -1,10 +1,10 @@
 # The Fanworks Archive
 
-A mockup of a Fanworks library using React. The library consists of Home page, a Fandoms page and a Favorites page.  
+A mockup of a fanworks library using React. The library consists of Home page, a Fandoms page and a Favorites page.  
 
 ## Functionality
 
-Navigate from one page to another using a dedicated NavBar. 
+Navigate from one page to another using the NavBar. 
 
 Use the search bar in Fandoms to find authors that write stories for the fandom you're interested in. 
 

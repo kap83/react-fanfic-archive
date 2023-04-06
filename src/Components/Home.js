@@ -21,7 +21,6 @@ export default function Home({handleNewUser}) {
       <p>Please be advised, work submitted via this feature cannot be edited in the future.</p>
       
       <NewAuthorSubmit handleNewUser={handleNewUser}/>
-    
     </div>
     </>
   )
