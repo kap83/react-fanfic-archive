@@ -19,7 +19,6 @@ export default function Card({user, handleFavoriteUpdate}) {
   }
 
 
-
   const defaultIcon = "https://picsum.photos/id/0/100/100"
   
   return (
