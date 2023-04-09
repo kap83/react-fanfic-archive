@@ -1,13 +1,11 @@
 // eslint-disable-next-line
-import React, {useState} from 'react'
+import React from 'react'
 import './Card.css'
 
 
 export default function Card({user, handleFavoriteUpdate}) {
-  // const [click, setClick] = useState(user.favorite)
-
+ 
   const handleClick = () => {
-    // setClick((prev) => !prev)
 
 
     fetch(`http://localhost:3000/users/${user.id}`, {
