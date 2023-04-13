@@ -1,9 +1,9 @@
 import React from 'react'
-import NewAuthorSubmit from './NewAuthorSubmit'
+import AddNewProfile from './AddNewProfile'
 import '../index.css'
 
 
-export default function Home({handleNewUser}) {
+export default function Home({handleAddProfile}) {
 
   return (
   <>
@@ -20,7 +20,7 @@ export default function Home({handleNewUser}) {
       <p>Use the adjacent form to submit your work with pseudonym of your choice.</p>
       <p>Please be advised, work submitted via this feature cannot be edited in the future.</p>
       
-      <NewAuthorSubmit handleNewUser={handleNewUser}/>
+      <AddNewProfile handleAddProfile={handleAddProfile}/>
     </div>
     </>
   )

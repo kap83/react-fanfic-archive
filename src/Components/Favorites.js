@@ -4,15 +4,14 @@ import Card from './Card'
 
 
 
-export default function Favorites({userData, handleFavoriteUpdate}) {
-  console.log(userData)
+export default function Favorites({profiles, handleFavoriteStatus}) {
   return (
     <>
-      {userData.map((user) => user.favorite === true ? 
+      {profiles.map((profile) => profile.favorite === true ? 
         <Card 
-          handleFavoriteUpdate={handleFavoriteUpdate} 
-          key={user.id} 
-          user={user}/> 
+        handleFavoriteStatus={handleFavoriteStatus} 
+          key={profile.id} 
+          profile={profile}/> 
           : null)} 
     </>
   )

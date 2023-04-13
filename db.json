@@ -1,5 +1,5 @@
 {
-  "users": [
+  "profiles": [
     {
       "id": 1,
       "username": "cali_writer",
@@ -92,16 +92,6 @@
         "wait for the rain"
       ],
       "favorite": false
-    },
-    {
-      "username": "Anon",
-      "fandoms": [
-        "Avengers"
-      ],
-      "titles": [
-        "Fic Title"
-      ],
-      "id": 7
     }
   ]
 }

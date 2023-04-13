@@ -6,26 +6,28 @@ import Home from './Home'
 import Fandoms from './Fandoms'
 import Favorites from "./Favorites"
 
-
 export default function App() {
-  const [userData, setUserData] = useState(null)
+  const [profiles, setProfiles] = useState([])
+
 
   useEffect(()=>{
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3000/profiles")
     .then(res => res.json())
-    .then(data => setUserData(data)
-    )
+    .then(profilesData => {
+      setProfiles(profilesData)
+    })
   },[])
 
-  const handleNewUser = (newUser) => {
-      setUserData([...userData], newUser)
+  const handleAddProfile = (newProfile) => {
+    setAuthors([...profiles, newProfile])
   }
+      
 
-  const handleFavoriteUpdate = (favoriteUpdate) => {
-       const favoriteUserIndex = userData.findIndex((user) => user.id === favoriteUpdate.id)
-       const copyUserData = [...userData]
-       copyUserData[favoriteUserIndex] = favoriteUpdate
-      setUserData(copyUserData)
+  const handleFavoriteStatus = (favoriteStatus) => {
+       const favoriteProfileIndex = profiles.findIndex((profile) => profile.id === favoriteStatus.id)
+       const copyProfiles = [...profiles]
+       copyProfiles[favoriteProfileIndex] = favoriteStatus
+       setProfiles(copyProfiles)
   }
 
   return (
@@ -34,24 +36,24 @@ export default function App() {
       <NavBar/>
       <Switch>
         <Route path="/fandoms">
-          {userData && 
+          {
             <Fandoms 
-            userData={userData} 
-            handleFavoriteUpdate={handleFavoriteUpdate}
+            profiles={profiles} 
+            handleFavoriteStatus={handleFavoriteStatus}
             />}
         </Route>
         <Route path="/favorites">
-          {userData && 
+          {
             <Favorites 
-              handleFavoriteUpdate={handleFavoriteUpdate} 
-              userData={userData} 
+            profiles={profiles} 
+            handleFavoriteStatus={handleFavoriteStatus}  
             />}
         </Route>
         <Route exact path="/">
-          {userData && 
+          {
             <Home 
-            userData={userData} 
-            handleNewUser={handleNewUser} 
+            profiles={profiles} 
+            handleAddProfile={handleAddProfile} 
           />}
         </Route>
       </Switch>

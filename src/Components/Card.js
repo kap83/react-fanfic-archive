@@ -1,20 +1,20 @@
-// eslint-disable-next-line
+
 import React from 'react'
 import './Card.css'
 
 
-export default function Card({user, handleFavoriteUpdate}) {
+export default function Card({profile, handleFavoriteStatus}) {
  
   const handleClick = () => {
 
-
-    fetch(`http://localhost:3000/users/${user.id}`, {
+    fetch(`http://localhost:3000/profile/${profile.id}`, {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({favorite: !user.favorite})
+      body: JSON.stringify({favorite: !profile.favorite})
     })
     .then(res => res.json())
-    .then(data => handleFavoriteUpdate(data))
+    
+    .then(updatedProfile => handleFavoriteStatus(updatedProfile))
   }
 
 
@@ -23,17 +23,17 @@ export default function Card({user, handleFavoriteUpdate}) {
   return (
       <div className= 'author-card-container'>
               <div className='image-container' >
-                <img src={user.icon || defaultIcon} alt="icon" />
+                <img src={profile.icon || defaultIcon} alt="icon" />
               </div>
-                <h1 className='usernameStyle'>{user.username}</h1>
-                <button className= 'btnStyle' onClick={handleClick}>{user.favorite ? "❤️" : "♡" }</button>
+                <h1 className='usernameStyle'>{profile.username}</h1>
+                <button className= 'btnStyle' onClick={handleClick}>{profile.favorite ? "❤️" : "♡" }</button>
                 <h3 className='fandomLableStyle'>Fandoms:</h3>
-              {user.fandoms?.map((fandom) => 
+              {profile.fandoms?.map((fandom) => 
                 <ul key={crypto.randomUUID()} className='fandomListStyle'>
                   <li>{fandom}</li>
                 </ul>)}
                 <h3 className='titleLabelStyle'>Titles:</h3>
-              {user.titles?.map((title)=>
+              {profile.titles?.map((title)=>
                 <ul key={crypto.randomUUID()} className='titleListStyle'>
                   <li>{title}</li>
                 </ul>

@@ -1,28 +1,32 @@
 import React, {useState} from 'react'
 import '../index.css'
 
-export default function NewAuthorSubmit({handleNewUser}) {
+export default function AddNewProfile ({handleAddProfile}) {
 
     const [username, setUsername] = useState("")
     const [fandom, setFandom] = useState("")
     const [title, setTitle] = useState("")
   
   
-    const handleSubmit =() => {
-      const newUserData = {
+    const handleSubmit =(e) => {
+      e.preventDefault()
+      const newProfileData = {
         username: username, 
         fandoms: [fandom],
         titles: [title] 
       }
   
-      fetch("http://localhost:3000/users", {
+      fetch("http://localhost:3000/authors", {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(newUserData)
+        body: JSON.stringify(newProfileData)
       })
       .then(res=> res.json())
-      .then(newData => handleNewUser(newData))
+      .then(updatedProfileData => handleAddProfile(updatedProfileData))
   
+      setUsername("")
+      setFandom("")
+      setTitle("")
     }
 
   return (

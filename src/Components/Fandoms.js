@@ -2,32 +2,32 @@ import React, {useState, useEffect} from 'react'
 import Card from './Card'
 import '../index.css'
 
-export default function Fandoms({userData, handleFavoriteUpdate}) {
-   const [search, setSearch] = useState("")
-   const [localUserData, setLocalUserData] = useState(userData)
+export default function Fandoms({profiles, handleFavoriteStatus}) {
 
-   console.log(localUserData)
+   const [search, setSearch] = useState("")
+   const [displayedProfiles, setDisplayedProfiles] = useState(profiles)
+
 
   const handleChange = (e) => { 
     setSearch(e.target.value)
   } 
 
  useEffect(() => { 
-    setLocalUserData(userData)
- }, [userData]) 
+  setDisplayedProfiles(profiles)
+ }, [profiles]) 
  
- 
+
  const handleSubmit = (e) =>{
     let changeSearchCaseSensitivity = search.toLowerCase()
     e.preventDefault()
-    const newSearchData = userData.filter((user) => user.fandoms.toString().toLowerCase().includes(changeSearchCaseSensitivity)
+    const newSearchProfiles = profiles.filter((profile) => profile.fandoms.toString().toLowerCase().includes(changeSearchCaseSensitivity)
     )
-   setLocalUserData(newSearchData)
-   setSearch("")
+    displayedProfiles(newSearchProfiles)
+    setSearch("")
  }
 
- const handleClearResults = () => {
-  setLocalUserData(userData)
+ const handleClearSearchResults = () => {
+    setDisplayedProfiles(profiles)
  }
 
   return (
@@ -42,15 +42,15 @@ export default function Fandoms({userData, handleFavoriteUpdate}) {
           </label>
           <button type="submit">Search</button>
           <button type="button" 
-            onClick={handleClearResults} 
+            onClick={handleClearSearchResults} 
             style={{marginLeft: "3px"}}>
               Clear
           </button>
         </form>
-        {localUserData.map((user) => 
-          <Card key={user.id} 
-          handleFavoriteUpdate={handleFavoriteUpdate} 
-          user={user} 
+        {displayedProfiles.map((profile) => 
+          <Card key={profile.id} 
+          handleFavoriteStatus={handleFavoriteStatus} 
+          profile={profile} 
         />)}
   </>
   )
