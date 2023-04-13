@@ -6,8 +6,8 @@ import './Card.css'
 export default function Card({profile, handleFavoriteStatus}) {
  
   const handleClick = () => {
-
-    fetch(`http://localhost:3000/profile/${profile.id}`, {
+ 
+    fetch(`http://localhost:3000/profiles/${profile.id}`, {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({favorite: !profile.favorite})

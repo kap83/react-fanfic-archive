@@ -19,7 +19,7 @@ export default function App() {
   },[])
 
   const handleAddProfile = (newProfile) => {
-    setAuthors([...profiles, newProfile])
+    setProfiles([...profiles, newProfile])
   }
       
 

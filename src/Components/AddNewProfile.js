@@ -16,7 +16,7 @@ export default function AddNewProfile ({handleAddProfile}) {
         titles: [title] 
       }
   
-      fetch("http://localhost:3000/authors", {
+      fetch("http://localhost:3000/profiles", {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newProfileData)

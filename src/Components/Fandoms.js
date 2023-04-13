@@ -22,7 +22,7 @@ export default function Fandoms({profiles, handleFavoriteStatus}) {
     e.preventDefault()
     const newSearchProfiles = profiles.filter((profile) => profile.fandoms.toString().toLowerCase().includes(changeSearchCaseSensitivity)
     )
-    displayedProfiles(newSearchProfiles)
+    setDisplayedProfiles(newSearchProfiles)
     setSearch("")
  }
 
