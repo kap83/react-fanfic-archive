@@ -17,7 +17,6 @@ export default function Card({profile, handleFavoriteStatus}) {
     .then(updatedProfile => handleFavoriteStatus(updatedProfile))
   }
 
-
   const defaultIcon = "https://picsum.photos/id/0/100/100"
   
   return (
@@ -28,7 +27,7 @@ export default function Card({profile, handleFavoriteStatus}) {
                 <h1 className='usernameStyle'>{profile.username}</h1>
                 <button className= 'btnStyle' onClick={handleClick}>{profile.favorite ? "❤️" : "♡" }</button>
                 <h3 className='fandomLableStyle'>Fandoms:</h3>
-              {profile.fandoms?.map((fandom) => 
+                {profile.fandoms?.map((fandom) => 
                 <ul key={crypto.randomUUID()} className='fandomListStyle'>
                   <li>{fandom}</li>
                 </ul>)}

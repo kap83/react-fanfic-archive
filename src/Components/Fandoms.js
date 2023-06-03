@@ -1,34 +1,29 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import Card from './Card'
 import '../index.css'
 
 export default function Fandoms({profiles, handleFavoriteStatus}) {
 
    const [search, setSearch] = useState("")
-   const [displayedProfiles, setDisplayedProfiles] = useState(profiles)
-
+   const [active, setActive] = useState(false)
 
   const handleChange = (e) => { 
     setSearch(e.target.value)
   } 
 
- useEffect(() => { 
-  setDisplayedProfiles(profiles)
- }, [profiles]) 
- 
-
  const handleSubmit = (e) =>{
-    let changeSearchCaseSensitivity = search.toLowerCase()
+  
     e.preventDefault()
-    const newSearchProfiles = profiles.filter((profile) => profile.fandoms.toString().toLowerCase().includes(changeSearchCaseSensitivity)
-    )
-    setDisplayedProfiles(newSearchProfiles)
+    setActive(true)
     setSearch("")
  }
 
  const handleClearSearchResults = () => {
-    setDisplayedProfiles(profiles)
+      setActive(false)
  }
+
+ const newSearchProfiles = active ? profiles : profiles.filter((profile) => profile.fandoms.toString().toLowerCase().includes(search.toLowerCase())) 
+
 
   return (
   <>
@@ -47,7 +42,7 @@ export default function Fandoms({profiles, handleFavoriteStatus}) {
               Clear
           </button>
         </form>
-        {displayedProfiles.map((profile) => 
+        {newSearchProfiles.map((profile) => 
           <Card key={profile.id} 
           handleFavoriteStatus={handleFavoriteStatus} 
           profile={profile} 
