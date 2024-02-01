@@ -14,7 +14,7 @@
         "Terminal",
         "our dreams would carry us"
       ],
-      "favorite": false
+      "favorite": true
     },
     {
       "id": 2,
@@ -44,7 +44,7 @@
         "Spy and Assassin",
         "One Shots and Drabbles"
       ],
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 4,
@@ -99,7 +99,7 @@
       "icon": "https://picsum.photos/id/15/100/100",
       "fandoms": [
         "Stranger Things",
-        "Mexican Gothic", 
+        "Mexican Gothic",
         "Only Murders in the Building"
       ],
       "titles": [
@@ -108,7 +108,7 @@
         "sweet poison",
         "a bruise like a flower"
       ],
-      "favorite": true
+      "favorite": false
     }
   ]
 }

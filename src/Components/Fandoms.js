@@ -28,19 +28,19 @@ export default function Fandoms({profiles, handleFavoriteStatus}) {
  const newSearchProfiles = active ? profiles.filter((profile) => profile.fandoms.toString().toLowerCase().includes(search.toLowerCase())) : profiles
 
 
-
   return (
   <>
         <form onSubmit={handleSubmit} className='searchformStyle'>
           <label className='searchLabelStyle'>
             Enter Fandom:
+          
             <input type="text" 
               className='searchInputStyle' 
               //tracks the characters entered into the search input
               value={search}
               onChange={handleChange} 
               name="name" />
-          </label>
+        </label>
           <button type="submit">Search</button>
           <button type="button" 
             onClick={handleClearSearchResults} 
@@ -54,7 +54,7 @@ export default function Fandoms({profiles, handleFavoriteStatus}) {
           handleFavoriteStatus={handleFavoriteStatus} 
           profile={profile} 
         />)}
-        {active === true && newSearchProfiles.length === 0 ? <p>sorry got nothing</p> : null}
+        {active === true && newSearchProfiles.length === 0 ? <p className='noSearchResults'>Hmmm... looks like there are no fics for {search} yet </p> : null}
   </>
   )
 }

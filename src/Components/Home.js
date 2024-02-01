@@ -7,7 +7,7 @@ export default function Home({handleAddProfile}) {
 
   return (
   <>
-    <h1>Welcome to The Fanworks Archive</h1>
+    <h1>Welcome to The Fanworks Archive, Reader!</h1>
     <div className='card-container'>
       <h3>Navigation</h3>
       <p>To search for fan fiction by fandoms use the search bar in Fandoms.</p>
