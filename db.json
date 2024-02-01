@@ -92,6 +92,23 @@
         "wait for the rain"
       ],
       "favorite": false
+    },
+    {
+      "id": 7,
+      "username": "eleven_fan",
+      "icon": "https://picsum.photos/id/15/100/100",
+      "fandoms": [
+        "Stranger Things",
+        "Mexican Gothic", 
+        "Only Murders in the Building"
+      ],
+      "titles": [
+        "let the light in",
+        "Te quiero así",
+        "sweet poison",
+        "a bruise like a flower"
+      ],
+      "favorite": true
     }
   ]
 }
