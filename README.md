@@ -2,7 +2,7 @@
 ![logo](https://github.com/kap83/react-fanfic-archive/assets/111032375/54f7ff54-5f8c-4cc8-9f23-2adcf458c295)
 
 
-The Fanworks Archive is a place for fan fiction afficionados to find and share fan fiction! Navigate the page as if you have already signed in. The library consists of Home page, a Fandoms page and a Favorites page. 
+The Fanworks Archive is a place for fan fiction afficionados to share fan fiction! Navigate the page as if you have already signed in. The library consists of Home page, a Fandoms page and a Favorites page. 
 
 Please note, this is barebones, simple mockup of a fanworks archive using React with a db.JSON framework. For now, there is no sign in/out or register functionality and you cannot upload stories (just their titles).  
 
